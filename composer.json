@@ -1,5 +1,8 @@
 {
     "name": "hexlet/code",
+    "bin": [
+        "bin/gendiff"
+    ],
     "authors": [
         {
             "name": "Vlad Mineev",
@@ -7,6 +10,24 @@
         }
     ],
     "require": {
-        "docopt/docopt": "^1.0"
+        "docopt/docopt": "^1.0",
+        "symfony/yaml": "^5.4",
+        "funct/funct": "^1.5"
+    },
+    "autoload": {
+        "files": [
+            "src/Differ.php",
+            "src/Formatter.php",
+            "src/Parser.php",
+            "src/Formatters/Json.php",
+            "src/Formatters/Plain.php",
+            "src/Formatters/Stylish.php"
+        ]
+    },
+    "require-dev": {
+        "phpstan/phpstan": "1.2.0",
+        "phpstan/phpstan-phpunit": "^1.0.0",
+        "phpstan/extension-installer": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.8.0"
     }
 }

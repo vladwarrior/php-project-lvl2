@@ -3,6 +3,8 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
+use function Differ\Differ\genDiff;
+
 $doc = <<<'DOCOPT'
 Generate diff
 
@@ -18,4 +20,6 @@ Options:
 
 DOCOPT;
 //php ./bin/gendiff --huba-buba <vendor> vlad1.txt выберет стиль хуба-буба и рядом с папкой вендор в файл влад1 положит информацию из Usage
-$args = Docopt::handle($doc, array('version'=>'1.0', 'format'=>'styyy'));
+$args = Docopt::handle($doc, array('version'=>'1.0'));
+
+echo genDiff($args->args['<firstFile>'], $args->args['<secondFile>'], $args->args['--format']);
