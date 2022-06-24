@@ -1,0 +1,12 @@
+{
+    "name": "hexlet/code",
+    "authors": [
+        {
+            "name": "Vlad Mineev",
+            "email": "vladislav.mineev.07@mail.ru"
+        }
+    ],
+    "require": {
+        "docopt/docopt": "^1.0"
+    }
+}
