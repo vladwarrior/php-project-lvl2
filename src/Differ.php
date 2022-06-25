@@ -45,7 +45,7 @@ function buildDiff(array $dataOne, array $dataTwo): array
 
     $result = array_map(function ($key) use ($dataOne, $dataTwo) {
         $valueOne = $dataOne[$key] ?? null;
-        print_r($valueOne . "\n");
+        //print_r($valueOne . "\n");
         $valueTwo = $dataTwo[$key] ?? null;
 
         if (!array_key_exists($key, $dataOne)) {
