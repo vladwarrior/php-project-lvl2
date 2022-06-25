@@ -13,9 +13,7 @@
         "docopt/docopt": "^1.0",
         "symfony/yaml": "^5.4",
         "funct/funct": "^1.5",
-        "lstrojny/functional-php": "^1.17",
-        "phpunit/phpunit": "^9.5",
-        "squizlabs/php_codesniffer": "^3.7"
+        "lstrojny/functional-php": "^1.17"
     },
     "autoload": {
         "files": [
@@ -31,6 +29,8 @@
         "phpstan/phpstan": "1.2.0",
         "phpstan/phpstan-phpunit": "^1.0.0",
         "phpstan/extension-installer": "^1.0",
-        "friendsofphp/php-cs-fixer": "^3.8.0"
+        "friendsofphp/php-cs-fixer": "^3.8.0",
+        "phpunit/phpunit": "^9.5",
+        "squizlabs/php_codesniffer": "^3.7"
     }
 }
