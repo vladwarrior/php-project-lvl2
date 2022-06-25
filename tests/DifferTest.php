@@ -35,7 +35,7 @@ class DifferTest extends TestCase
                 'file2' => 'file2.json'
             ],
             'plain format json' => [
-                'format' => 'json',
+                'format' => 'plain',
                 'expected' => 'result.plain',
                 'file1' => 'file1.json',
                 'file2' => 'file2.json'

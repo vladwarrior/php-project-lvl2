@@ -13,7 +13,7 @@ function format(array $tree, array $structureName = []): string
 
         switch ($treeElement['type']) {
             case 'changed':
-                $deleted = formatValue($treeElement['value_one_data']);
+                $deleted = formatValue($treeElement['value_first_data']);
                 $added = formatValue($treeElement['value_two_data']);
                 return "Property '$name' was $status. From $added to $deleted";
             case 'deleted':
@@ -42,7 +42,7 @@ function getStatus(string $typeElement): string
     }
 }
 
-function formatValue(mixed $value): string
+function formatValue($value): string
 {
     switch (true) {
         case is_bool($value):
