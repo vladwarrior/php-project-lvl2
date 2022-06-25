@@ -12,7 +12,9 @@
     "require": {
         "docopt/docopt": "^1.0",
         "symfony/yaml": "^5.4",
-        "funct/funct": "^1.5"
+        "funct/funct": "^1.5",
+        "lstrojny/functional-php": "^1.17",
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "files": [
