@@ -28,9 +28,9 @@ class DifferTest extends TestCase
     public function filesProvider(): array
     {
         return [
-            'json format json' => [
-                'format' => 'json',
-                'expected' => 'result.json',
+            'stylish format json' => [
+                'format' => 'stylish',
+                'expected' => 'result.stylish',
                 'file1' => 'file1.json',
                 'file2' => 'file2.json'
             ],
@@ -39,6 +39,36 @@ class DifferTest extends TestCase
                 'expected' => 'result.plain',
                 'file1' => 'file1.json',
                 'file2' => 'file2.json'
+            ],
+            'plain format yaml' => [
+                'format' => 'plain',
+                'expected' => 'result.plain',
+                'file1' => 'file.yml',
+                'file2' => 'file1.yml'
+            ],
+            'plain format combo' => [
+                'format' => 'plain',
+                'expected' => 'result.plain',
+                'file1' => 'file1.json',
+                'file2' => 'file1.yml'
+            ],
+            'json format json' => [
+                'format' => 'json',
+                'expected' => 'result.json',
+                'file1' => 'file1.json',
+                'file2' => 'file2.json'
+            ],
+            'json format yaml' => [
+                'format' => 'json',
+                'expected' => 'result.json',
+                'file1' => 'file.yml',
+                'file2' => 'file1.yml'
+            ],
+            'json format combo' => [
+                'format' => 'json',
+                'expected' => 'result.json',
+                'file1' => 'file1.json',
+                'file2' => 'file1.yml'
             ]
         ];
     }
