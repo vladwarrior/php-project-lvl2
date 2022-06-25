@@ -16,7 +16,7 @@ function parse(string $data, string $format): array
         return Yaml::parse($data);
     }
     if ($format == 'yml') {
-        return formatJson($diff);
+        return Yaml::parse($data);
     }
     if ($format == 'json') {
         return json_decode($data, true);

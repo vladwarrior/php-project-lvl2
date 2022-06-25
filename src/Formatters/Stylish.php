@@ -67,7 +67,7 @@ function format(array $tree, int $depth = 1): string
                     );
                     $partStringTwo = formatString(
                         $elementName,
-                        formatValue($treeElement['value_two_data'], $depth),
+                        formatValue($treeElement['value_one_data'], $depth),
                         $depth,
                         '+'
                     );

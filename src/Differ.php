@@ -19,6 +19,7 @@ function genDiff(string $pathOne, string $pathTwo, string $format = 'stylish'): 
     $fileDataTwo = parse($fileDataRawTwo['data_file'], $fileDataRawTwo['format']);
 
     $tree = buildDiff($fileDataOne, $fileDataTwo);
+    //print_r($tree);
     return format($tree, $format);
 }
 
