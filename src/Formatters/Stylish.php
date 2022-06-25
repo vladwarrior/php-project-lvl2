@@ -40,9 +40,7 @@ function createSpaces(int $depth): string
     return str_repeat("    ", $depth);
 }
 
-/**
- * @throws \Exception
- */
+
 function format(array $tree, int $depth = 1): string
 {
     $formattedTree = array_map(
@@ -59,17 +57,17 @@ function format(array $tree, int $depth = 1): string
                         ' '
                     );
                 case 'changed':
+                    $partStringTwo = formatString(
+                        $elementName,
+                        formatValue($treeElement['value_first_data'], $depth),
+                        $depth,
+                        '+'
+                    );
                     $partStringOne = formatString(
                         $elementName,
                         formatValue($treeElement['value_two_data'], $depth),
                         $depth,
                         '-'
-                    );
-                    $partStringTwo = formatString(
-                        $elementName,
-                        formatValue($treeElement['value_one_data'], $depth),
-                        $depth,
-                        '+'
                     );
                     return "$partStringOne\n$partStringTwo";
                 case 'added':

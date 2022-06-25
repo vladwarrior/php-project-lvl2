@@ -20,5 +20,7 @@ function parse(string $data, string $format): array
     }
     if ($format == 'json') {
         return json_decode($data, true);
+    } else {
+        return [];
     }
 }

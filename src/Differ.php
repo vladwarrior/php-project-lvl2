@@ -8,6 +8,7 @@ use SplFileInfo;
 use function Funct\Collection\union;
 use function Differ\Format\format;
 use function Differ\Parsers\parse;
+
 //use function Functional\sort;
 
 function genDiff(string $pathOne, string $pathTwo, string $format = 'stylish'): string
@@ -87,5 +88,5 @@ function buildDiff(array $dataOne, array $dataTwo): array
             'value' => $valueOne,
         ];
     }, $allUnionKeys);
-    return array_values($result) ?? [];
+    return array_values($result);
 }

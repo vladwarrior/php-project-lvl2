@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Differ\Format;
 
 use Exception;
@@ -9,9 +8,6 @@ use function Differ\Formatters\Plain\format as formatPlain;
 use function Differ\Formatters\Json\format as formatJson;
 use function Differ\Formatters\Stylish\format as formatStylish;
 
-/**
- * @throws Exception
- */
 function format(array $diff, string $format): string
 {
     if ($format == 'stylish') {
@@ -22,6 +18,7 @@ function format(array $diff, string $format): string
     }
     if ($format == 'plain') {
         return formatPlain($diff);
+    } else {
+        return "$format is not found.";
     }
-    
 }
