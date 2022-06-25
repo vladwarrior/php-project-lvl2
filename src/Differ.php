@@ -1,16 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Differ\Differ;
 
 use Exception;
 use SplFileInfo;
 
-use function Funct\Collection\union;
 use function Differ\Format\format;
 use function Differ\Parsers\parse;
+use function Functional\sort;
 
-//use function Functional\sort;
-
+/**
+ * @throws Exception Стандартное исключение.
+ */
 function genDiff(string $pathOne, string $pathTwo, string $format = 'stylish'): string
 {
     $fileDataRawOne = getFileData($pathOne);
@@ -20,11 +23,12 @@ function genDiff(string $pathOne, string $pathTwo, string $format = 'stylish'): 
     $fileDataTwo = parse($fileDataRawTwo['data_file'], $fileDataRawTwo['format']);
 
     $tree = buildDiff($fileDataOne, $fileDataTwo);
-    //print_r($tree);
     return format($tree, $format);
 }
 
-
+/**
+ * @throws Exception Стандартное исключение.
+ */
 function getFileData(string $pathToFile): array
 {
     if (!file_exists($pathToFile)) {
@@ -39,13 +43,16 @@ function getFileData(string $pathToFile): array
 function buildDiff(array $dataOne, array $dataTwo): array
 {
     $keysFirst = array_keys($dataOne);
-    $keysSecond = array_keys($dataTwo);
-    $allUnionKeys = union($keysFirst, $keysSecond);
-    sort($allUnionKeys);
+    $keysLast = array_keys($dataTwo);
+    $allKeys = array_unique(array_merge($keysFirst, $keysLast));
+    $allKeysSorted = sort(
+        $allKeys,
+        fn ($left, $right) => $left <=> $right,
+        true
+    );
 
     $result = array_map(function ($key) use ($dataOne, $dataTwo) {
         $valueOne = $dataOne[$key] ?? null;
-        //print_r($valueOne . "\n");
         $valueTwo = $dataTwo[$key] ?? null;
 
         if (!array_key_exists($key, $dataOne)) {
@@ -87,6 +94,6 @@ function buildDiff(array $dataOne, array $dataTwo): array
             'type' => 'no_change',
             'value' => $valueOne,
         ];
-    }, $allUnionKeys);
+    }, $allKeysSorted);
     return array_values($result);
 }
