@@ -19,6 +19,6 @@ function format(array $diff, string $format): string
     if ($format == 'plain') {
         return formatPlain($diff);
     } else {
-        return "$format is not found.";
+        throw new Exception("$format is not found.");
     }
 }
