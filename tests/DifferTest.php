@@ -1,6 +1,5 @@
 <?php
 
-declare(strict_types=1);
 
 namespace Tests;
 
@@ -25,14 +24,19 @@ class DifferTest extends TestCase
         );
         $this->assertEquals(file_get_contents($this->createFilePath($expected)), $actual);
     }
-
-   
+    
     public function filesProvider(): array
     {
         return [
             'json format json' => [
                 'format' => 'json',
                 'expected' => 'result.json',
+                'file1' => 'file1.json',
+                'file2' => 'file2.json'
+            ],
+            'plain format json' => [
+                'format' => 'json',
+                'expected' => 'result.plain',
                 'file1' => 'file1.json',
                 'file2' => 'file2.json'
             ]

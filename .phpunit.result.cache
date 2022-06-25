@@ -1,1 +1,1 @@
-{"version":1,"defects":{"Tests\\DifferTest::testGendiff with data set \"json format json\"":3},"times":{"Tests\\DifferTest::testGendiff with data set \"json format json\"":0.291}}
+{"version":1,"defects":{"Tests\\DifferTest::testGendiff with data set \"json format json\"":3,"Tests\\DifferTest::testGendiff":4,"Tests\\DifferTest::testGendiff with data set \"plain format json\"":3},"times":{"Tests\\DifferTest::testGendiff with data set \"json format json\"":0.314,"Tests\\DifferTest::testGendiff":0.681,"Tests\\DifferTest::testGendiff with data set \"plain format json\"":0.117}}
